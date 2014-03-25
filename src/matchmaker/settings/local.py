@@ -7,7 +7,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'duri.abdurahman@gmail.com'
-EMAIL_HOST_PASSWORD = 'Allaroundtheworld'
+EMAIL_HOST_PASSWORD = '*********'
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -136,6 +136,11 @@ INSTALLED_APPS = (
     'south',
     'profiles',
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7
+LOGIN_REDIRECT_URL = '/'  
+#LOGIN_URL = '/accounts/signin/'  
+#LOGOUT_URL = '/accounts/signout/'  
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
