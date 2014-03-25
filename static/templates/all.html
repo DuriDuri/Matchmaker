@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+{% for user in users %}
+
+<li> {{ user }} {% for item in user.address_set.all %} {% if forloop.first %} {{ item }} {% endif %} {% endfor %}</li>
+
+{% endfor %}
+{% endblock %}
