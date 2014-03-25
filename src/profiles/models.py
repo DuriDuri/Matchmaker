@@ -16,7 +16,7 @@ class Address(models.Model):
     
     
     def __unicode__(self, ):
-        return self.user.username
+        return self.city
 
 class Job(models.Model):
     user = models.ForeignKey(User)
@@ -39,3 +39,11 @@ class Job(models.Model):
     def __unicode__(self, ):
         return self.position
 
+class UserPicture(models.Model):
+    user = models.ForeignKey(User)
+    image = models.ImageField(upload_to='profiles/')
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+    active = models.BooleanField(default=True)
+    
+    def __unicode__(self, ):
+        return str(self.image)

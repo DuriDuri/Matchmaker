@@ -3,9 +3,16 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'duri.abdurahman@gmail.com'
+EMAIL_HOST_PASSWORD = 'Allaroundtheworld'
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
+
 
 MANAGERS = ADMINS
 

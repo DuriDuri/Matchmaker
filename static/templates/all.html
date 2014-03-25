@@ -4,7 +4,7 @@
 
 {% for user in users %}
 
-<li> {{ user }} {% for item in user.address_set.all %} {% if forloop.first %} {{ item }} {% endif %} {% endfor %}</li>
+<li> <a href= '/members/{{ user.username}}'>{{ user }} </a>{% for item in user.address_set.all %} {% if forloop.first %} {{ item }} {% endif %} {% endfor %}</li>
 
 {% endfor %}
 {% endblock %}
