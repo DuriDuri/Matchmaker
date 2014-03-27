@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ single_user }}
+
+<ul>
+{% for item in single_user.userpicture_set.all %}
+
+<li><img src='{{ MEDIA_URL }}{{ item }}' /></li>
+
+{% endfor %}
+</ul>
+
+
+<ul>
+{% for item in single_user.address_set.all %}
+
+<li>{{ item }}</li>
+
+{% endfor %}
+</ul>
+
+
+<ol>
+{% for item in single_user.job_set.all %}
+
+<li> {{ item }} </li>
+
+{% endfor %}
+</ol>
+{% endblock %}
