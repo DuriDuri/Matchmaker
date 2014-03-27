@@ -33,10 +33,20 @@
     {% block jumbotron %} {% endblock %}
     
         <div class="body-content">
-    
-
-        {% block content %}{% endblock %}
-
+            <div class='row'>
+                <div class='col-lg-2 col-12'>
+                    <ul class='nav nav-pills nav-stacked'>
+                        <li><a href='/'><span class= 'badge pull-right'>8</span>Home</a></li>
+                        <li><a href='/'>Profile</a></li>
+                        <li><a href='/'><span class= 'badge pull-right'>8</span>Messages</a></li>
+                    </ul>
+                
+                </div>
+   
+                <div class='col-lg-10 col-12'>
+                {% block content %}{% endblock %}
+                </div>
+            </div>
         <hr>
         </div>
     {% include 'footer.html' %}
