@@ -60,11 +60,19 @@ def edit_job(request):
 def edit_profile(request):
     # initialize instances to be modified 
     user = request.user
+    addresses = Address.objects.filter(user=user)
+    jobs = Job.objects.filter(user=user)
     picture = UserPicture.objects.get(user=user)
     
     # Connect forms to instances
-    user_picture_form = UserPictureForm(request.POST or None, prefix='picture', instance=picture)
+    AddressFormset = modelformset_factory(Address, form=AddressForm, extra=1)
+    formset_a = AddressFormset(queryset=addresses)
     
+    JobFormset = modelformset_factory(Job, form=JobForm, extra=1)
+    formset_j = JobFormset(queryset=jobs)
+    
+    user_picture_form = UserPictureForm(request.POST or None, request.FILES or None, prefix='picture', instance=picture)
+     
     ##Actually save the form responses
     if  user_picture_form.is_valid():
         form = user_picture_form.save(commit=False)
